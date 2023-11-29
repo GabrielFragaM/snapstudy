@@ -16,10 +16,10 @@ class PaperCutPostIt extends StatelessWidget {
         color: color ?? Colors.blue,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(.2),
+            color: Colors.black.withOpacity(.1),
             spreadRadius: 1,
-            blurRadius: 4.5,
-            offset: const Offset(2, 3),
+            blurRadius: 7,
+            offset: const Offset(2, 2),
           ),
         ],
         borderRadius: const BorderRadius.only(
@@ -33,7 +33,7 @@ class PaperCutPostIt extends StatelessWidget {
         text,
         style: const TextStyle(
           color: Colors.white,
-          fontSize: 10,
+          fontSize: 11,
         ),
       ),
     );

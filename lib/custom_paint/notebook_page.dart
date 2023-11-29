@@ -17,10 +17,10 @@ class NotebookPage extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(.2),
-              spreadRadius: 3,
-              blurRadius: 9,
-              offset: const Offset(3, 6),
+              color: Colors.black.withOpacity(.1),
+              spreadRadius: 1,
+              blurRadius: 7,
+              offset: const Offset(2, 2),
             ),
           ],
         ),
