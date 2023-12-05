@@ -9,21 +9,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(),
@@ -39,8 +29,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   TextEditingController questionController = TextEditingController();
+
+  int _selectedIndex = 0;
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  List<Widget> saves = [
+    PaperCutPostIt(text: 'Olá mundo, Contas de matemárica, Contas de matemárica Contas de matemárica',),
+    PaperCutPostIt(text: 'Contas de matemárica', color: Colors.red,),
+    PaperCutPostIt(text: 'Portugûes', color: Colors.green,),
+    PaperCutPostIt(text: 'Física Calcular', color: Colors.orange,),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Icon(Icons.account_balance_wallet_outlined, color: Colors.white, size: 19),
+                    Icon(Icons.star, color: Colors.white, size: 19),
                     SizedBox(width: 5),
                     Text('5', style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w700)),
                   ],
@@ -86,7 +89,37 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        drawer: const Text(''),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              ListTile(
+                title: const Text('Pesquisar'),
+                selected: _selectedIndex == 0,
+                onTap: () {
+                  _onItemTapped(0);
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: const Text('Minha Conta'),
+                selected: _selectedIndex == 1,
+                onTap: () {
+                  _onItemTapped(1);
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: const Text('Loja Créditos'),
+                selected: _selectedIndex == 2,
+                onTap: () {
+                  _onItemTapped(2);
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
         body: SizedBox(
           height: height,
           width: width,
@@ -107,12 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
                       padding: const EdgeInsets.all(15),
-                      children: const [
-                        PaperCutPostIt(text: 'Olá mundo, Contas de matemárica, Contas de matemárica Contas de matemárica',),
-                        PaperCutPostIt(text: 'Contas de matemárica', color: Colors.red,),
-                        PaperCutPostIt(text: 'Portugûes', color: Colors.green,),
-                        PaperCutPostIt(text: 'Física Calcular', color: Colors.orange,),
-                      ],
+                      children: saves,
                     ),
                   ),
                   const Padding(

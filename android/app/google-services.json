@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "321116956033",
+    "project_id": "snapstudy-d1b2b",
+    "storage_bucket": "snapstudy-d1b2b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321116956033:android:4d2a29fc72c4a89363b480",
+        "android_client_info": {
+          "package_name": "com.paware.apps.snapstudy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321116956033-fgd1g52pl26lq3sk3udpm9v68hofslou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALKewSXYBqT4DwI-0OYfvJveLcsshCY2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321116956033-fgd1g52pl26lq3sk3udpm9v68hofslou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
